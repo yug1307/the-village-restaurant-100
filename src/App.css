@@ -1,0 +1,25 @@
+.main{
+    /* border: 3px solid black; */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.nonveg{
+    /* border: 3px solid red; */
+    color: white;
+    border-radius: 6px;
+    background-color: red;
+    padding: 8px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.veg{
+    /* border: 3px solid green; */
+    color: white;
+    border-radius: 6px;
+    background-color: green;
+    padding: 8px;
+    font-family: 'Times New Roman', Times, serif;
+}
