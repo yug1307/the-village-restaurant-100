@@ -6,7 +6,7 @@ const NonVeg = () => {
   return (
     <> 
     <Topbar />
-    <section className="bg-stone-800 py-16 px-6 md:px-20" id="nonveg">
+    <section className="bg-orange-800 py-16 px-6 md:px-20" id="nonveg">
     <div className="max-w-7xl mx-auto">
     <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mb-12">Chicken Soups</h2>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
