@@ -12,7 +12,7 @@ const Veg = () => {
     <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
       
       <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Tomato Soup</h3>
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Tomato Soup</h3>
         <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>100</p>
       </div>
 
