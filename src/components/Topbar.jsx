@@ -6,7 +6,7 @@ const Topbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full bg-teal-800 text-white">
+    <div className="w-full bg-yellow-700 text-white">
       <div className="container mx-auto flex items-center justify-between px-3 py-3">
         {/* Logo or Brand */}
         <div className="text-lg text-white font-bold">The Village Restaurant</div>
