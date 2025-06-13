@@ -10,7 +10,7 @@ function App() {
     <section>
     <Topbar/>
     <Carousel/> 
-    <main className="main">
+    <main className="main bg-yellow-700">
       <div className="nonveg"><Link to="/nonveg">Non - Veg</Link></div>
       <div className="veg"><Link to="/veg">Veg</Link></div>
     </main>
