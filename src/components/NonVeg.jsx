@@ -11,19 +11,19 @@ const NonVeg = () => {
     <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mb-12">Chicken Soups</h2>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Chicken Clear Soup</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>150</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Clear Soup</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>150</p>
       </div>
  
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Chicken Manchow Soup</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>150</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Manchow Soup</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>150</p>
       </div>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Chicken Hot & Sour Soup</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>150</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Hot & Sour Soup</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>150</p>
       </div>
     </div>
 
