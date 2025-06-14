@@ -111,24 +111,24 @@ const Veg = () => {
     <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mt-12 mb-12">Hara Bhara Salad</h2>
     <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
     
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Plain Salad</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>40</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Plain Salad</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>40</p>
       </div>
       
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Green Salad</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>60</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Green Salad</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>60</p>
       </div>
       
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Kachumbar Salad</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>80</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Kachumbar Salad</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>80</p>
       </div>
     
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Curd</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>50</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Curd</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>50</p>
       </div>
     </div>
 
@@ -136,39 +136,39 @@ const Veg = () => {
     <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mt-12 mb-12">Restaurant Walo Ka Snacks</h2>
     <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Veg Pakora</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>130</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Veg Pakora</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>130</p>
       </div>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Cutlet</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>120</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Cutlet</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>120</p>
       </div>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">French Fries</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>150</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">French Fries</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>150</p>
       </div>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Harabhara Kabab</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>170</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Harabhara Kabab</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>170</p>
       </div>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Paneer Cheese Ball</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>200</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Paneer Cheese Ball</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>200</p>
       </div>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Paneer Pakoda</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>170</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Paneer Pakoda</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>170</p>
       </div>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Crispy Corn</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>170</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Crispy Corn</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>170</p>
       </div>
     </div>
 
@@ -176,64 +176,64 @@ const Veg = () => {
     <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mt-12 mb-12">India ka Chinese Snacks</h2>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Veg Noodles</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>140</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Veg Noodles</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>140</p>
       </div>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Veg Manchurian</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>180</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Veg Manchurian</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>180</p>
       </div>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Manchurian Noodles</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>180</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Manchurian Noodles</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>180</p>
       </div>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Paneer Manchurian Noodles</h3>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Paneer Manchurian Noodles</h3>
         <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>220</p>
       </div>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Paneer Chilly</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>220</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Paneer Chilly</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>220</p>
       </div>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Mushroom Chilly</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>220</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Mushroom Chilly</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>220</p>
       </div>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Veg Krispy</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>160</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Veg Krispy</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>160</p>
       </div>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Veg 65</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>190</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Veg 65</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>190</p>
       </div>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Paneer 65</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>210</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Paneer 65</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>210</p>
       </div>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Veg Fried Rice</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>210</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Veg Fried Rice</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>210</p>
       </div>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Manchurian Fried Rice</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>240</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Manchurian Fried Rice</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>240</p>
       </div>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Schezwan Fried Rice</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>220</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Schezwan Fried Rice</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>220</p>
       </div>
     </div>
 
@@ -241,79 +241,79 @@ const Veg = () => {
     <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mt-12 mb-12">Khet Ke Chawal</h2>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Plain Steam Rice</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>140/90</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Plain Steam Rice</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>140/90</p>
       </div>
       
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Jeera Rice</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>150/110</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Jeera Rice</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>150/110</p>
       </div>
       
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Mutter Rice</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>170/120</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Mutter Rice</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>170/120</p>
       </div>
       
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Garlic Jeera Rice</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>180/125</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Garlic Jeera Rice</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>180/125</p>
       </div>
       
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Plain Dal Khichdi</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>250/150</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Plain Dal Khichdi</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>250/150</p>
       </div>
       
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Veg Biryani</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>240/125</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Veg Biryani</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>240/125</p>
       </div>
       
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Paneer Pulao</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>200</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Paneer Pulao</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>200</p>
       </div>
       
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Mushroom Pulao</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>250</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Mushroom Pulao</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>250</p>
       </div>
       
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Mutter Pulao</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>180</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Mutter Pulao</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>180</p>
       </div>
     </div>
 
     {/* Pustik Dal */}
     <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mt-12 mb-12">Pustik Dal</h2>
-    <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Dal Fry</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>180/120</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Dal Fry</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>180/120</p>
       </div>
     
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Dal Tadka</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>200/120</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Dal Tadka</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>200/120</p>
       </div>
     
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Dal Jeera</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>170/110</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Dal Jeera</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>170/110</p>
       </div>
     
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Butter Dal Fry</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>180/120</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Butter Dal Fry</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>180/120</p>
       </div>
     
-      <div className="bg-white shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Dal Kolhapuri</h3>
-        <p className="text-lg text-emerald-500 flex items-center"><MdCurrencyRupee/>190/120</p>
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Dal Kolhapuri</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>190/120</p>
       </div>
     </div>
 
