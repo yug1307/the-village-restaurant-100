@@ -17,17 +17,17 @@ const Veg = () => {
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Veg Hot & Sour Soup</h3>
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Veg Hot & Sour Soup</h3>
         <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>100</p>
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Manchow Soup</h3>
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Manchow Soup</h3>
         <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>100</p>
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-blue-700">Lemon Coriander Soup</h3>
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Lemon Coriander Soup</h3>
         <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>110</p>
       </div>
     </div>
