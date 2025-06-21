@@ -108,7 +108,7 @@ const NonVeg = () => {
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
         <h3 className="text-2xl font-semibold font-serif text-neutral-50">Egg Curry</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>100</p>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>120</p>
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
