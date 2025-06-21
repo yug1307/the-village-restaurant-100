@@ -78,7 +78,7 @@ const NonVeg = () => {
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
         <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Biryani</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>220</p>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>250</p>
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
@@ -188,7 +188,7 @@ const NonVeg = () => {
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
         <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Chilly</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>250</p>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>250/500</p>
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
@@ -208,7 +208,7 @@ const NonVeg = () => {
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
         <h3 className="text-2xl font-semibold font-serif text-neutral-50">Egg Chicken Fried Rice</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>200</p>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>250</p>
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
@@ -373,22 +373,22 @@ const NonVeg = () => {
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
         <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Masala</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>230</p>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>280</p>
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
         <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Curry</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>220</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Sawaji</h3>
         <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>250</p>
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Sawaji</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>260</p>
+      </div>
+
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
         <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Dhaba</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>230</p>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>250</p>
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
@@ -403,7 +403,7 @@ const NonVeg = () => {
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
         <h3 className="text-2xl font-semibold font-serif text-neutral-50">Village Special Chulah Chicken Handi</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>280</p>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>350</p>
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
@@ -418,27 +418,27 @@ const NonVeg = () => {
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
         <h3 className="text-2xl font-semibold font-serif text-neutral-50">Mutton Curry</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>280/450/850</p>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>300</p>
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
         <h3 className="text-2xl font-semibold font-serif text-neutral-50">Mutton Masala</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>280/450/850</p>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>350</p>
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
         <h3 className="text-2xl font-semibold font-serif text-neutral-50">Mutton Rogan Josh</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>300/500/925</p>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>350</p>
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
         <h3 className="text-2xl font-semibold font-serif text-neutral-50">Mutton Sawaji</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>300/500/925</p>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>300</p>
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
         <h3 className="text-2xl font-semibold font-serif text-neutral-50">Mutton Rarha</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>325/550/1000</p>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>325</p>
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
@@ -513,7 +513,7 @@ const NonVeg = () => {
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
         <h3 className="text-2xl font-semibold font-serif text-neutral-50">Butter Chicken</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>270</p>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>300</p>
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
