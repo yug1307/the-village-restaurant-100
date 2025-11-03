@@ -102,6 +102,11 @@ const Veg = () => {
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Masala Garlic Fries</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>200</p>
+      </div>
+      
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
         <h3 className="text-2xl font-semibold font-serif text-neutral-50">Plain Maggi</h3>
         <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>110</p>
       </div>
@@ -202,6 +207,11 @@ const Veg = () => {
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Paneer Cheese Cutlet</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>200</p>
+      </div>
+
+      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
         <h3 className="text-2xl font-semibold font-serif text-neutral-50">French Fries</h3>
         <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>150</p>
       </div>
@@ -262,8 +272,8 @@ const Veg = () => {
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Veg Krispy</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>180</p>
+        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Veg Crispy</h3>
+        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>240</p>
       </div>
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
