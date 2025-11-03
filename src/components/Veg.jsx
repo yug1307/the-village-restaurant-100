@@ -84,7 +84,7 @@ const Veg = () => {
 
     {/* Quick Bites */}
     <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mt-12 mb-12">Quick Bites</h2>
-    <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
 
       <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
         <h3 className="text-2xl font-semibold font-serif text-neutral-50">Nachos</h3>
