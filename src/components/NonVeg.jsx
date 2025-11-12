@@ -1,550 +1,254 @@
-import React from 'react'
-import Topbar from './Topbar'
-import { MdCurrencyRupee } from "react-icons/md";
+import React, { useState } from "react";
+import Topbar from "./Topbar";
+
+// ✅ Menu Data
+const chickenSoups = [
+  { id: 1, name: "Chicken Clear Soup", price: 150 },
+  { id: 2, name: "Chicken Manchow Soup", price: 150 },
+  { id: 3, name: "Chicken Hot & Sour Soup", price: 150 }
+]
+
+const tandoorStarter = [
+  { id: 1, name: "Chicken Tikka", price: 300 },
+  { id: 2, name: "Chicken Lasuni Tikka", price: 360 },
+  { id: 3, name: "Chicken Malai Tikka", price: 360 }
+]
+
+const salad = [
+  { id: 1, name: "Plain Salad", price: 40 },
+  { id: 2, name: "Green Salad", price: 60 },
+  { id: 3, name: "Kachumbar Salad", price: 80 },
+  { id: 4, name: "Curd", price: 50 }
+]
+
+const gaonKiBiryani = [
+  { id: 1, name: "Chicken Biryani", price: 250 },
+  { id: 2, name: "Mutton Biryani", price: 350 },
+  { id: 3, name: "Fish Biryani", price: 350 },
+  { id: 4, name: "Egg Biryani", price: 200 },
+  { id: 5, name: "Veg Biryani", price: 180 }
+]
+
+const andeKaFunda = [
+  { id: 1, name: "Egg Curry", price: 120 },
+  { id: 2, name: "Egg Masala", price: 125 },
+  { id: 3, name: "Egg Bhurji", price: 90 },
+  { id: 4, name: "Egg Boiled", price: 50 },
+  { id: 5, name: "Egg Boiled Fry", price: 70 },
+  { id: 6, name: "Egg Bhurji Curry", price: 125 },
+  { id: 7, name: "Egg Lapeta", price: 150 },
+  { id: 8, name: "Egg Omelet", price: 90 },
+  { id: 9, name: "Egg Cheese Omelet", price: 140 },
+  { id: 10, name: "Half Fry", price: 90 }
+] 
+
+const nonVegChinese = [
+  { id: 1, name: "Chicken Noodles", price: 200 },
+  { id: 2, name: "Chicken Manchurian", price: 250 },
+  { id: 3, name: "Garlic Chicken", price: 260 },
+  { id: 4, name: "Chicken 65", price: 260 },
+  { id: 5, name: "Chicken Manchurian Noodles", price: 280 },
+  { id: 6, name: "Chicken Chilly", price: 250, price2: '/500' },
+  { id: 7, name: "Egg Chilly", price: 200 },
+  { id: 8, name: "Chicken Lollipop", price: 260 },
+  { id: 9, name: "Chicken Fried Rice", price: 230 },
+  { id:10, name: "Egg Chicken Fried Rice", price: 250 },
+  { id:11, name: "Black Pepper Chicken", price: 280 }
+]
+
+const chickenStarter = [
+  { id: 1, name: "Chicken Oil Roast", price: 300 },
+  { id: 2, name: "Chicken Popcorn", price: 300 },
+  { id: 3, name: "Bhuna Chicken", price: 300 },
+  { id: 4, name: "Jungli Chicken (Boiler)", price: 300 },
+  { id: 5, name: "Chicken Lapeta", price: 300 },
+  { id: 6, name: "Tawa Bhuna Chicken", price: 300 }
+]
+
+const muttonStarter = [
+  { id: 1, name: "Mutton Lapeta", price: 350 },
+  { id: 2, name: "Bhuna Mutton", price: 380 },
+  { id: 3, name: "Tawa Mutton Bhuna", price: 360 }
+]
+
+const indianSnacks = [
+  { id: 1, name: "Roast Papad", price: 20 },
+  { id: 2, name: "Fry Papad", price: 25 },
+  { id: 3, name: "Masala Papad", price: 30 },
+  { id: 4, name: "Finger Chips", price: 150 }
+]
+
+const Dal = [
+  { id: 1, name: "Dal Fry", price: 180, price2: '/120' },
+  { id: 2, name: "Dal Tadka", price: 200, price2: '/120' },
+  { id: 3, name: "Dal Jeera", price: 170, price2: '/110' },
+  { id: 4, name: "Butter Dal Fry", price: 180, price2: '/120' },
+  { id: 5, name: "Dal Kolhapuri", price: 190, price2: '/120' }
+]
+
+const fishStarter = [
+  { id: 1, name: "Fish Fry", price: 220 },
+  { id: 2, name: "Fish Fry Masala Roast", price: 275 },
+  { id: 3, name: "Fish Fingers", price: 400 },
+  { id: 4, name: "Tawa Fish Bhuna", price: 300 },
+  { id: 5, name: "Fish Manchurian", price: 350 },
+  { id: 6, name: "Garlic Fish", price: 250 },
+  { id: 7, name: "Fish Curry", price: 230 }
+]
+
+const desiChicken = [
+  { id: 1, name: "Chicken Masala", price: 280 },
+  { id: 2, name: "Chicken Curry", price: 250 },
+  { id: 3, name: "Chicken Sawaji", price: 260 },
+  { id: 4, name: "Chicken Dhaba", price: 250 },
+  { id: 5, name: "Chicken Waradi (Desi)", price: 300 },
+  { id: 6, name: "Murg Maratha", price: 360, price2: '/750' },
+  { id: 7, name: "Village Special Chulah Chicken Handi", price: 350 },
+  { id: 8, name: "Gravy", price: 150 }
+]
+
+const Mutton = [
+  { id: 1, name: "Mutton Curry", price: 300 },
+  { id: 2, name: "Mutton Masala", price: 350 },
+  { id: 3, name: "Mutton Rogan Josh", price: 350 },
+  { id: 4, name: "Mutton Sawaji", price: 300 },
+  { id: 5, name: "Mutton Rarha", price: 325 },
+  { id: 6, name: "Mutton Keema Kaleji", price: 250 },
+]
+
+const Chawal = [
+  { id: 1, name: "Plain Steam Rice", price: 140, price2: '/90' },
+  { id: 2, name: "Jeera Rice", price: 150, price2: '/110' },
+  { id: 3, name: "Mutter Rice", price: 170, price2: '/120' },
+  { id: 4, name: "Garlic Jeera Rice", price: 180, price2: '/125' },
+  { id: 5, name: "Plain Dal Khichdi", price: 250, price2: '/150' },
+  { id: 6, name: "Veg Biryani", price: 240, price2: '/125'},
+  { id: 7, name: "Paneer Pulao", price: 200 },
+  { id: 8, name: "Mushroom Pulao", price: 250 },
+  { id: 9, name: "Mutter Pulao", price: 180 }
+]
+
+const chickenMainCourse = [
+  { id: 1, name: "Chicken Afghani", price: 300 },
+  { id: 2, name: "Rum Chicken Masala", price: 465 },
+  { id: 3, name: "Butter Chicken", price: 300 },
+  { id: 4, name: "Butter Chicken (Boneless)", price: 300 },
+  { id: 5, name: "Chicken Kadhai", price: 300 },
+  { id: 6, name: "Chicken Patiyala", price: 270 },
+  { id: 7, name: "Chicken RaRa Masala", price: 280 },
+  { id: 8, name: "Chicken Rogan Josh", price: 280 }
+]
+
+// ✅ Categories + custom grid sizes
+const categories = [
+  { id: 1, name: "Chicken Soups", items: chickenSoups, gridCols: "grid-cols-3" },
+  { id: 2, name: "Tandoor Se Non-Veg : Starter", items: tandoorStarter, gridCols: "grid-cols-3" },
+  { id: 3, name: "Hara Bhara Salad", items: salad, gridCols: "grid-cols-4" },
+  { id: 4, name: "Gaon Ki Biryani", items: gaonKiBiryani, gridCols: "grid-cols-5" },
+  { id: 5, name: "Egg (Ande Ka Funda)", items: andeKaFunda, gridCols: "grid-cols-5" },
+  { id: 6, name: "India ka Non-Veg Chinese", items: nonVegChinese, gridCols: "grid-cols-4" },
+  { id: 7, name: "Hotel Walo ka Chicken Starter", items: chickenStarter, gridCols: "grid-cols-3" },
+  { id: 8, name: "Mutton Starter", items: muttonStarter, gridCols: "grid-cols-3" },
+  { id: 9, name: "Indian Snacks", items: indianSnacks, gridCols: "grid-cols-4" },
+  { id: 10, name: "Dal", items: Dal, gridCols: "grid-cols-3" },
+  { id: 11, name: "Talao Ki Fish Starter", items: fishStarter, gridCols: "grid-cols-4" },
+  { id: 12, name: "Desi Chicken", items: desiChicken, gridCols: "grid-cols-3" },
+  { id: 13, name: "Mutton Market Se", items: Mutton, gridCols: "grid-cols-3" },
+  { id: 14, name: "Khet Ke Chawal Se", items: Chawal, gridCols: "grid-cols-3" },
+  { id: 15, name: "Hotelwale Chicken Main Course", items: chickenMainCourse, gridCols: "grid-cols-4" }
+];
 
 const NonVeg = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [priceRange, setPriceRange] = useState([0, 1000]);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  // Filter logic
+  const filteredCategories = categories.map((cat) => {
+    const filteredItems = cat.items.filter((item) =>
+
+      item.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+      item.price >= priceRange[0] && item.price <= priceRange[1]
+    );
+    return { ...cat, items: filteredItems };
+  });
+
+  const visibleCategories =
+    selectedCategory === "All"
+      ? filteredCategories
+      : filteredCategories.filter((cat) => cat.name === selectedCategory);
+
   return (
-    <> 
-    <Topbar />
-    <section className="bg-yellow-700 py-16 px-6 md:px-20" id="nonveg">
-    <div className="max-w-7xl mx-auto">
-    <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mb-12">Chicken Soups</h2>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Clear Soup</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>150</p>
-      </div>
- 
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Manchow Soup</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>150</p>
+    <>
+    <Topbar/>
+    <div className="p-6 bg-yellow-700 min-h-screen">
+
+      {/* Filters */}
+      <div className="max-w-6xl mx-auto gap-6 grid grid-cols-1 md:grid-cols-3 sticky top-[85px] bg-purple-200 p-4 rounded-2xl">
+
+        {/* Search */}
+        <input type="text" placeholder="Search for a dish....." value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-full p-2 border text-gray-900 rounded-lg border-neutral-600"
+        />
+
+        {/* Price Range */}
+        <div className="flex items-center gap-2 w-full">
+          <span className="font-medium">₹{priceRange[0]}</span>
+
+          <input type="range" min="0" max="1000" step="10" value={priceRange[0]}
+            onChange={(e) =>
+              setPriceRange([Number(e.target.value), priceRange[1]])
+            }
+            className="w-full accent-red-500"/>
+
+          <input type="range" min="0" max="1000" step="10" value={priceRange[1]}
+            onChange={(e) =>
+              setPriceRange([priceRange[0], Number(e.target.value)])
+            }
+            className="w-full accent-yellow-500"/>
+            
+          <span className="font-medium">₹{priceRange[1]}</span>
+        </div>
+
+        {/* Category Dropdown */}
+        <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}
+          className="w-full p-2 border rounded-lg border-neutral-600">
+
+          <option value="All">All Categories</option>
+          {categories.map((cat) => (
+            <option key={cat.name} value={cat.name}>
+              {cat.name}
+            </option>
+          ))}
+        </select>
       </div>
 
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Hot & Sour Soup</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>150</p>
-      </div>
+      {/* Menu Display */}
+      {visibleCategories.map((cat) => (
+        <div key={cat.name} className="max-w-7xl mx-auto my-12 pt-[18px]">
+          <h2 className="text-4xl font-bold font-serif text-white text-center py-3">{cat.name}</h2>
+
+          {cat.items.length > 0 ? (
+            <div className={`grid gap-6 sm:${cat.gridCols} lg:${cat.gridCols}`}>
+              {cat.items.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex items-center justify-between bg-white p-6 rounded-lg">
+
+                  <h3 className="text-2xl font-semibold text-red-600">{item.name}</h3>
+                  <p className="text-gray-700 text-lg">₹{item.price}{item.price2}</p>
+                </div>
+              ))}
+            </div>
+            ) : (
+            <p className="text-white text-lg italic">No dishes found.</p>
+          )}
+        </div>
+      ))}
     </div>
-
-    {/* Tandoor Se Non-Veg : Starter */}
-    <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mt-12 mb-12">Tandoor Se Non-Veg : Starter</h2>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Tikka</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>300</p>
-      </div>
-  
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Lasuni Tikka</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>360</p>
-      </div>
-  
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Malai Tikka</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>360</p>
-      </div>
-    </div>
-
-    {/* Hara Bhara Salad */}
-    <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mt-12 mb-12">Hara Bhara Salad</h2>
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Plain Salad</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>40</p>
-      </div>
-  
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Green Salad</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>60</p>
-      </div>
-  
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Kachumbar Salad</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>80</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Curd</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>50</p>
-      </div>
-    </div>
-
-    {/* Gaon Ki Biryani */}
-    <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mt-12 mb-12">Gaon Ki Biryani</h2>
-    <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Biryani</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>250</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Mutton Biryani</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>350</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Fish Biryani</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>350</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Egg Biryani</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>200</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Veg Biryani</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>180</p>
-      </div>
-    </div>
-
-    {/* Egg (Ande ka Funda) */}
-    <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mt-12 mb-12">Egg (Ande ka Funda)</h2>
-    <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Egg Curry</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>120</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Egg Masala</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>125</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Egg Bhurji</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>90</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Egg Boiled</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>50</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Egg Bolied Fry</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>70</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Egg Bhurji Curry</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>125</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Egg Lapeta</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>150</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Egg Omelet</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>90</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Egg Cheese Omelet</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>140</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Half Fry</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>90</p>
-      </div>
-    </div>
-
-    {/* India ka Non Veg Chinese */}
-    <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mt-12 mb-12">India ka Non Veg Chinese</h2>
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Noodles</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>200</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Manchurian</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>250</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Garlic Chicken</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>260</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken 65</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>260</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Manchurian Noodles</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>280</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Chilly</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>250/500</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Egg Chilly</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>200</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Lollipop</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>260</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Fried Rice</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>230</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Egg Chicken Fried Rice</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>250</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Black Pepper Chicken</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>280</p>
-      </div>
-    </div>
-
-    {/* Hotelwalo ka Chicken Starter */}
-    <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mt-12 mb-12">Hotelwalo ka Chicken Starter</h2>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Oil Roast</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>300</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Popcorn</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>300</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Bhuna Chicken</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>300</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Jungli Chicken (Boiler)</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>300</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Lapeta</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>300</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Tawa Bhuna Chicken</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>300</p>
-      </div>
-    </div>
-
-    {/* Mutton Starter */}
-    <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mt-12 mb-12">Mutton Starter</h2>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Mutton Lapeta</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>350</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Bhuna Mutton</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>380</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Tawa Mutton Bhuna</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>360</p>
-      </div>
-    </div>
-
-    {/* Indian Snacks */}
-    <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mt-12 mb-12">Indian Snacks</h2>
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Roast Papad</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>20</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Fry Papad</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>25</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Masala Papad</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>30</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Finger Chips</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>150</p>
-      </div>
-    </div>
-
-    {/* Dal */}
-    <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mt-12 mb-12">Dal</h2>
-    <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Dal Fry</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>180/120</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Dal Tadka</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>200/120</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Dal Jeera</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>170/110</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Butter Dal Fry</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>180/120</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Dal Kolhapuri</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>190/120</p>
-      </div>
-    </div>
-
-    {/* Talao ki Fish Starter */}
-    <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mt-12 mb-12">Talao ki Fish Starter</h2>
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Fish Fry</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>220</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Fish Fry Masala Roast</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>275</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Fish Fingers</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>400</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Tawa Fish Bhuna</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>300</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Fish Manchurian</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>350</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Garlic Fish</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>250</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Fish Curry</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>230</p>
-      </div>
-    </div>
-
-    {/* Desi Chicken */}
-    <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mt-12 mb-12">Desi Chicken</h2>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Masala</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>280</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Curry</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>250</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Sawaji</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>260</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Dhaba</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>250</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Waradi (Desi)</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>300</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Murg Maratha</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>360/750</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Village Special Chulah Chicken Handi</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>350</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Gravy</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>150</p>
-      </div>
-    </div>
-
-    {/* Mutton Market Se */}
-    <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mt-12 mb-12">Mutton Market Se</h2>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Mutton Curry</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>300</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Mutton Masala</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>350</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Mutton Rogan Josh</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>350</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Mutton Sawaji</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>300</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Mutton Rarha</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>325</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Mutton Keema Kaleji</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>250</p>
-      </div>
-    </div>
-
-    {/* Khet Ke Chawal Se */}
-    <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mt-12 mb-12">Khet Ke Chawal Se</h2>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Plain Steam Rice</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>140/90</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Jeera Rice</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>150/110</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Mutter Rice</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>170/120</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Garlic Jeera Rice</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>180/125</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Plain Dal Khichdi</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>250/150</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Veg Biryani</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>240/125</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Paneer Pulao</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>200</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Mushroom Pulao</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>250</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Mutter Pulao</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>180</p>
-      </div>
-    </div>
-
-    {/* Hotelwale Chicken Main Course */}
-    <h2 className="text-4xl font-bold font-serif text-center text-neutral-50 mt-12 mb-12">Hotelwale Chicken Main Course</h2>
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Afghani</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>300</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Rum Chicken Masala</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>465</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Butter Chicken</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>300</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Butter Chicken (Boneless)</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>300</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Kadhai</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>300</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Patiyala</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>270</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken RaRa Masala</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>280</p>
-      </div>
-
-      <div className="bg-none shadow-lg rounded-lg p-6 flex items-center justify-between mb-3 mt-3">
-        <h3 className="text-2xl font-semibold font-serif text-neutral-50">Chicken Rogan Josh</h3>
-        <p className="text-lg text-neutral-50 flex items-center"><MdCurrencyRupee/>280</p>
-      </div>
-    </div>
-    </div>
-    </section>
     </>
-  )
-}
+  );
+};
 
-export default NonVeg
+export default NonVeg;
