@@ -179,7 +179,7 @@ const Veg = () => {
       <div className="max-w-6xl mx-auto gap-6 grid grid-cols-1 md:grid-cols-3 sticky top-[85px] bg-purple-200 p-4 rounded-2xl">
 
         {/* Search */}
-        <input type="text" placeholder="Search for a dish....." value={searchTerm}
+        <input type="text" placeholder="🔍 Search for a dish....." value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="w-full p-2 border text-gray-900 rounded-lg border-neutral-600"
         />
