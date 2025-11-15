@@ -160,23 +160,14 @@ const categories = [
 
 const NonVeg = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [priceRange, setPriceRange] = useState([0, 1000]);
-  const [selectedCategory, setSelectedCategory] = useState("All");
 
   // Filter logic
-  const filteredCategories = categories.map((cat) => {
-    const filteredItems = cat.items.filter((item) =>
-
-      item.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-      item.price >= priceRange[0] && item.price <= priceRange[1]
-    );
-    return { ...cat, items: filteredItems };
-  });
-
-  const visibleCategories =
-    selectedCategory === "All"
-      ? filteredCategories
-      : filteredCategories.filter((cat) => cat.name === selectedCategory);
+  const filteredCategories = categories.map((cat) => ({
+    ...cat,
+    items: cat.items.filter((item) =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase())
+    ),
+  }));
 
   return (
     <>
@@ -184,48 +175,17 @@ const NonVeg = () => {
     <div className="p-6 bg-yellow-700 min-h-screen">
 
       {/* Filters */}
-      <div className="max-w-6xl mx-auto gap-6 grid grid-cols-1 md:grid-cols-3 sticky top-[85px] bg-purple-200 p-4 rounded-2xl">
+      <div className="max-w-xl mx-auto gap-6 sticky top-[85px] py-4 rounded-2xl">
 
         {/* Search */}
-        <input type="text" placeholder="Search for a dish....." value={searchTerm}
+        <input type="text" placeholder="🔍 Search for a dish....." value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="w-full p-2 border text-gray-900 rounded-lg border-neutral-600"
         />
-
-        {/* Price Range */}
-        <div className="flex items-center gap-2 w-full">
-          <span className="font-medium">₹{priceRange[0]}</span>
-
-          <input type="range" min="0" max="1000" step="10" value={priceRange[0]}
-            onChange={(e) =>
-              setPriceRange([Number(e.target.value), priceRange[1]])
-            }
-            className="w-full accent-red-500"/>
-
-          <input type="range" min="0" max="1000" step="10" value={priceRange[1]}
-            onChange={(e) =>
-              setPriceRange([priceRange[0], Number(e.target.value)])
-            }
-            className="w-full accent-yellow-500"/>
-            
-          <span className="font-medium">₹{priceRange[1]}</span>
-        </div>
-
-        {/* Category Dropdown */}
-        <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}
-          className="w-full p-2 border rounded-lg border-neutral-600">
-
-          <option value="All">All Categories</option>
-          {categories.map((cat) => (
-            <option key={cat.name} value={cat.name}>
-              {cat.name}
-            </option>
-          ))}
-        </select>
       </div>
 
       {/* Menu Display */}
-      {visibleCategories.map((cat) => (
+      {filteredCategories.map((cat) => (
         <div key={cat.name} className="max-w-7xl mx-auto my-12 pt-[18px]">
           <h2 className="text-4xl font-bold font-serif text-white text-center py-3">{cat.name}</h2>
 
